@@ -262,8 +262,11 @@ body {
   color: #ffffff;
 }
 .btn--outline:hover {
-  background-color: #011950;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #011950;
+}
+.btn--outline:hover .btn__icon {
+  filter: brightness(0) saturate(100%) invert(11%) sepia(85%) saturate(2849%) hue-rotate(218deg) brightness(91%) contrast(101%);
 }
 .btn__icon {
   width: 1rem;
@@ -455,6 +458,11 @@ body {
   .mv__title-line {
     font-size: 3.75rem;
   }
+}
+
+.mv__title-line,
+.mv__catch {
+  visibility: hidden;
 }
 
 .mv__slide {

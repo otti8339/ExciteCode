@@ -40,6 +40,12 @@
   }
 }
 
+.mv__title-line,
+.mv__catch {
+  // opacity: 0;
+  visibility: hidden;
+}
+
 .mv__slide {
   height: 100%;
 
