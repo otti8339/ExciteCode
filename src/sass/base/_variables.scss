@@ -3,27 +3,29 @@
 // ============================================
 
 // カラー
-$color-main: #333333;
-$color-accent: #0ea5e9;
+$color-main: #000;
+$color-accent: #011950;
 $color-white: #ffffff;
-$color-bg: #f5f5f5;
+$color-bg: #001135;
 $color-text: #333333;
 $color-text-light: #666666;
 $color-border: #dddddd;
 
 // フォント
 $font-family-base: 'Noto Sans JP', sans-serif;
+$font-family-en: 'Oswald', sans-serif;
+$font-family-sub: 'Roboto', sans-serif;
 $font-size-base: 16px;
 $font-size-sm: 14px;
 $font-size-lg: 18px;
-$line-height-base: 1.8;
+$line-height-base: 1.5;
 
 // ブレークポイント
 $breakpoint-sp: 768px;
 $breakpoint-tb: 1025px;
 
 // レイアウト
-$inner-width: 1200px;
+$inner-width: 1280px;
 $inner-padding: 20px;
 
 // トランジション

@@ -4,19 +4,395 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Oswald:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <title>サイトタイトル</title>
+  <!-- head タグ内 -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/style.min.css">
+  <!-- body タグ閉じる前 -->
+  <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- <script defer>AOS.init();</script> -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out',
+        once: true,
+        offset: 100,
+      });
+    });
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script defer src="js/main.js"></script>
 </head>
 <body>
-
   <header class="header">
+    <div class="header__inner">
+      <div class="header__content">
+        <h1 class="header__logo">
+          <a href="#"><img src="images/logo.svg" alt="サイトロゴ"></a>
+        </h1>
+        <button class="header__hamburger js-hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+       </button>
+       <div class="header__sp-nav sp-nav js-sp-nav">
+          <div class="sp-nav__logo">
+            <a href="#"><img src="images/white-logo.svg" alt="サイトロゴ"></a>
+          </div>
+          <ul class="sp-nav__items">
+            <li class="sp-nav__item"><a href="#">top</a></li>
+            <li class="sp-nav__item"><a href="#">about</a></li>
+            <li class="sp-nav__item"><a href="#">service</a></li>
+            <li class="sp-nav__item"><a href="#">works</a></li>
+            <li class="sp-nav__item"><a href="#">news</a></li>
+            <li class="sp-nav__item"><a href="#">contact</a></li>
+            <li class="sp-nav__item"><a href="#">プライバシーポリシー</a></li>
+          </ul>
+          <ul class="sp-nav__sns sns">
+            <li class="sns-item">
+              <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            </li>
+            <li class="sns-item">
+              <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            </li>
+            <li class="sns-item">
+              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+          </ul>
+       </div>
+       <div class="header__pc-nav pc-nav">
+          <ul class="pc-nav__items">
+            <li class="pc-nav__item"><a href="#">top</a></li>
+            <li class="pc-nav__item"><a href="#">about</a></li>
+            <li class="pc-nav__item"><a href="#">service</a></li>
+            <li class="pc-nav__item"><a href="#">works</a></li>
+            <li class="pc-nav__item"><a href="#">news</a></li>
+            <li class="pc-nav__item"><a href="#">contact</a></li>
+          </ul>
+       </div>
+      </div>
+    </div>
   </header>
 
   <main class="main">
-    <!-- メインコンテンツ -->
+    <section class="mv">
+      <div class="mv__inner inner">
+        <div class="mv__content">
+          <div class="swiper js-mv-swiper mv__swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide mv__slide">
+                <picture>
+                  <source media="(min-width: 768px)" srcset="images/mv-pc1.png">
+                  <img src="images/mv-sp1.png" alt="">
+                </picture>
+              </div>
+              <div class="swiper-slide mv__slide">
+                <picture>
+                  <source media="(min-width: 768px)" srcset="images/mv-pc2.png">
+                  <img src="images/mv-sp2.png" alt="">
+                </picture>
+              </div>
+              <div class="swiper-slide mv__slide">
+                <picture>
+                  <source media="(min-width: 768px)" srcset="images/mv-pc3.png">
+                  <img src="images/mv-sp3.png" alt="">
+                </picture>
+              </div>
+              <div class="swiper-slide mv__slide">
+                <picture>
+                  <source media="(min-width: 768px)" srcset="images/mv-pc4.png">
+                  <img src="images/mv-sp4.png" alt="">
+                </picture>
+              </div>
+            </div>
+          </div>
+          <h2 class="mv__title">
+            <span class="mv__title-line">あなたの</span>
+            <span class="mv__title-line">日常が目覚める</span>
+          </h2>
+        </div>
+      </div>
+      <div class="mv__catch-wrap">
+        <p class="mv__catch">Good life for Good Car</p>
+        <p class="mv__catch" aria-hidden="true">Good life for Good Car</p>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="about__inner">
+        <div class="about__content">
+          <div class="about__img">
+            <img src="images/about-img.png" alt="about画像">
+          </div>
+          <div class="about__body">
+            <h2 class="about__title">About Us</h2>
+            <div class="about__text">弊社は、輸入車選びのすべてを見つめ直し、新たなスタイルを提案するインポート・セレクト・ブランドです。これまでの憧れだけや批評家の意見といったイメージで選ぶのではなく、オーナー様となる方がクルマから直接感じるリアルな感性を第一にした、最良の一台との出会いをコーディネートいたします。</div>
+            <div class="about__btn">
+              <a href="#" class="btn-more"><span>READ MORE</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="service">
+      <div class="service__inner inner">
+        <div class="service__title" >
+          <h2 class="section-title" data-aos="fade-left">Service</h2>
+        </div>
+        <div class="service__items">
+          <div class="service__item">
+            <div class="service__img">
+              <img src="images/service-img1.png" alt="サービス画像1">
+              <div class="service__header">
+                <div class="service__number">Service01</div>
+                <div class="service__header-title">購入サポート</div>
+              </div>
+            </div>
+            <div class="service__body">
+              <p class="service__text">国を超え、メーカーを超え、高級の本質をお届けする特別な一台との出会いをサポートします。</p>
+              <div class="service__link">
+                <a href="#" class="btn-more btn-more--outline"><span>READ MORE</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="service__item">
+            <div class="service__img">
+              <img src="images/service-img2.png" alt="サービス画像2">
+              <div class="service__header">
+                <div class="service__number">Service02</div>
+                <div class="service__header-title">修理・整備</div>
+              </div>
+            </div>
+            <div class="service__body">
+              <p class="service__text">高度な輸入車修理技術と数多くの修理実績、熟練の技術・設備であなたの愛車を完全に直します。</p>
+              <div class="service__link">
+                <a href="#" class="btn-more btn-more--outline"><span>READ MORE</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="service__item">
+            <div class="service__img">
+              <img src="images/service-img3.png" alt="サービス画像3">
+              <div class="service__header">
+                <div class="service__number">Service03</div>
+                <div class="service__header-title">車検・点検</div>
+              </div>
+            </div>
+            <div class="service__body">
+              <p class="service__text">輸入車の取り扱いが県内トップクラス。専門の整備工場へ任せたいなら弊社へご相談ください。</p>
+              <div class="service__link">
+                <a href="#" class="btn-more btn-more--outline"><span>READ MORE</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="works">
+      <div class="works__inner">
+        <div class="works__title">
+          <h2 class="section-title" data-aos="fade-right">Works</h2>
+        </div>
+        <div class="works__content">
+          <div class="works__items">
+            <div class="works__item" data-aos="fade-up" data-aos-delay="0">
+              <div class="works__img">
+                <img src="images/works-img1.png" alt="施工事例画像1">
+              </div>
+              <div class="works__body">
+                <div class="works__category">修理・整備</div>
+                <h3 class="works__text">車のドアが開けられなくなった｜ドアロックの交換と...</h3>
+                <p class="works__description">弊社は、輸入車選びのすべてを見つめ直し、新たなスタイルを提案するインポート・セレクト・ブランドです。これまでの憧れだけや批評家の意見といったイメージで選ぶのではなく...</p>
+                <time class="works__date" datetime="2022-09-02">2022.09.02</time>
+              </div>
+            </div>
+            <div class="works__item" data-aos="fade-up" data-aos-delay="100">
+              <div class="works__img">
+                <img src="images/works-img2.png" alt="施工事例画像2">
+              </div>
+              <div class="works__body">
+                <div class="works__category">修理・整備</div>
+                <h3 class="works__text">愛車のリアバンパーに傷がついた｜板金修理と塗装で...</h3>
+                <p class="works__description">弊社は、輸入車選びのすべてを見つめ直し、新たなスタイルを提案するインポート・セレクト・ブランドです。これまでの憧れだけや批評家の意見といったイメージで選ぶのではなく...</p>
+                <time class="works__date" datetime="2022-08-26">2022.08.26</time>
+              </div>
+            </div>
+            <div class="works__item" data-aos="fade-up" data-aos-delay="200">
+              <div class="works__img">
+                <img src="images/works-img3.png" alt="施工事例画像3">
+              </div>
+              <div class="works__body">
+                <div class="works__category">販売サポート</div>
+                <h3 class="works__text">はじめて輸入車の購入を検討中のお客様|憧れのBM...</h3>
+                <p class="works__description">弊社は、輸入車選びのすべてを見つめ直し、新たなスタイルを提案するインポート・セレクト・ブランドです。これまでの憧れだけや批評家の意見といったイメージで選ぶのではなく...</p>
+                <time class="works__date" datetime="2022-08-20">2022.08.20</time>
+              </div>
+            </div>
+          </div>
+          <div class="works__link">
+            <a href="#" class="btn-more"><span>READ MORE</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="news">
+      <div class="news__inner">
+        <div class="news__content">
+          <div class="news__head">
+            <div class="news__title">
+              <h2 class="section-title" data-aos="fade-right">News</h2>
+            </div>
+            <div class="news__categories" data-aos="fade-up">
+              <a href="#" class="news__category news__category--active">すべてのお知らせ</a>
+              <a href="#" class="news__category">トピックス</a>
+              <a href="#" class="news__category">イベント・キャンペーン</a>
+              <a href="#" class="news__category">入庫車情報</a>
+            </div>
+          </div>
+          <ul class="news__items">
+            <li class="news__item" data-aos="fade-up">
+              <a href="#" class="news__link">
+                <div class="news__link-head">
+                  <time class="news__date"  datetime="2022.09.02">2022.09.02</time>
+                  <ul class="news__tags">
+                    <li class="news__tag">トピックス</li>
+                    <li class="news__tag">イベント・キャンペーン</li>
+                  </ul>
+                </div>
+                <p class="news__text">2022年10月8日・9日・10日の3日間、試乗車フェアを開催します</p>
+              </a>
+            </li>
+            <li class="news__item" data-aos="fade-up">
+              <a href="#" class="news__link">
+                <div class="news__link-head">
+                  <time class="news__date"  datetime="2022.08.23">2022.08.23</time>
+                  <ul class="news__tags">
+                    <li class="news__tag">トピックス</li>
+                    <li class="news__tag">入庫車情報</li>
+                  </ul>
+                </div>
+                <p class="news__text">【入庫車のご案内】メルセデスベンツG 350が入庫しました</p>
+              </a>
+            </li>
+            <li class="news__item" data-aos="fade-up">
+              <a href="#" class="news__link">
+                <div class="news__link-head">
+                  <time class="news__date"  datetime="2022.08.07">2022.08.07</time>
+                  <ul class="news__tags">
+                    <li class="news__tag">トピックス</li>
+                  </ul>
+                </div>
+                <p class="news__text">お盆休みのご案内</p>
+              </a>
+            </li>
+            <li class="news__item" data-aos="fade-up">
+              <a href="#" class="news__link">
+                <div class="news__link-head">
+                  <time class="news__date"  datetime="2022.08.03">2022.08.03</time>
+                  <ul class="news__tags">
+                    <li class="news__tag">トピックス</li>
+                    <li class="news__tag">入庫車情報</li>
+                  </ul>
+                </div>
+                <p class="news__text">【入庫車のご案内】JEEPラングラー アンリミテッド サハラが入庫しました</p>
+              </a>
+            </li>
+            <li class="news__item" data-aos="fade-up">
+              <a href="#" class="news__link">
+                <div class="news__link-head">
+                  <time class="news__date"  datetime="2022.07.26">2022.07.26</time>
+                  <ul class="news__tags">
+                    <li class="news__tag">トピックス</li>
+                  </ul>
+                </div>
+                <p class="news__text">半導体不足は輸入車・輸入中古車にどう影響するか</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="news__btn">
+          <a href="#" class="btn-more"><span>READ MORE</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <h2 class="contact__title sr-only">お問い合わせ</h2>
+      <div class="contact__inner">
+        <div class="contact__content">
+          <div class="contact__body">
+            <p class="contact__lead">輸入車の購入や修理のご相談など<br>お気軽にお問い合わせください。</p>
+            <div class="contact__actions">
+              <a href="#" class="btn btn--outline">
+                 <img src="images/icon-mail.svg" alt="" class="btn__icon">
+                 <span>お問い合わせ</span>
+              </a>
+              <a href="#" class="btn btn--outline">
+                 <img src="images/icon-phon.svg" alt="" class="btn__icon">
+                 <span>0000-000-000</span>
+              </a>
+            </div>
+            <p class="contact__hours">受付時間 : 火曜日を除く 10：00〜18：00</p>
+          </div>
+          <div class="contact__img">
+            <picture>
+              <source media="(min-width: 768px)" srcset="images/contact-pc.png">
+              <img src="images/contact-sp.png" alt="">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__contents">
+        <div class="footer__content">
+          <div class="footer__nav footer-nav">
+            <ul class="footer-nav__items">
+              <li class="footer-nav__item"><a href="#">top</a></li>
+              <li class="footer-nav__item"><a href="#">about</a></li>
+              <li class="footer-nav__item"><a href="#">service</a></li>
+              <li class="footer-nav__item"><a href="#">works</a></li>
+              <li class="footer-nav__item"><a href="#">news</a></li>
+              <li class="footer-nav__item"><a href="#">contact</a></li>
+              <li class="footer-nav__item"><a href="#">プライバシーポリシー</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__content">
+          <div class="footer__top">
+            <div class="footer__logo">
+              <a href="#"><img src="images/white-logo.svg" alt="フッターロゴ"></a>
+            </div>
+            <ul class="footer__sns sns">
+              <li class="sns-item">
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+              </li>
+              <li class="sns-item">
+                <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+              </li>
+              <li class="sns-item">
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              </li>
+           </ul>
+          </div>
+          <div class="footer__copyright">
+            &copy; 2026 ExciteCode Automobile
+          </div>
+        </div>
+      </div>
+    </div>
   </footer>
 </body>
 </html>

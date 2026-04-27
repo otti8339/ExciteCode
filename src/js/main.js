@@ -21,13 +21,25 @@ document.addEventListener('DOMContentLoaded', function () {
   // ============================================
   // ハンバーガーメニュー（必要に応じて有効化）
   // ============================================
-  // const hamburger = document.querySelector('.hamburger');
-  // const nav = document.querySelector('.header__nav');
-  // if (hamburger && nav) {
-  //   hamburger.addEventListener('click', function () {
-  //     hamburger.classList.toggle('is-open');
-  //     nav.classList.toggle('is-open');
-  //   });
-  // }
+  const hamburger = document.querySelector('.js-hamburger');
+  const nav = document.querySelector('.js-sp-nav');
+  if (hamburger && nav ) {
+    hamburger.addEventListener('click', function () {
+      hamburger.classList.toggle('is-open');
+      nav.classList.toggle('is-open');
+    });
+  }
+
+  const mv_swiper = new Swiper('.js-mv-swiper', {
+    direction: 'vertical',
+    loop: true,
+    speed: 2000,
+    allowTouchMove: false,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false
+    },
+  });
+
 
 });

@@ -5,14 +5,20 @@
 @use '../base/mixin' as *;
 
 .btn {
-  display: inline-block;
-  padding: 14px 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(10);
+  width: 100%;
+  padding: rem(12) rem(40);
   border-radius: 4px;
   font-size: $font-size-base;
-  font-weight: 700;
   text-align: center;
   transition: all $transition-base;
   cursor: pointer;
+  @include mq {
+    padding: rem(11) rem(20);
+  }
 
   // メインカラー
   &--primary {
@@ -27,12 +33,25 @@
   // アウトライン
   &--outline {
     background-color: transparent;
-    border: 2px solid $color-accent;
-    color: $color-accent;
+    border: rem(1) solid $color-white;
+    color: $color-white;
 
     &:hover {
       background-color: $color-accent;
       color: $color-white;
+    }
+  }
+
+  &__icon {
+    width: rem(16);
+    @include mq {
+      width: rem(22);
+    }
+  }
+
+  span {
+    @include mq {
+      font-size: rem(22);
     }
   }
 }

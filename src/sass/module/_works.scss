@@ -1,0 +1,128 @@
+@use '../base/variables' as *;
+@use '../base/mixin' as *;
+
+.works {
+  margin-top: rem(80);
+  padding-top: rem(60);
+  background: #F8F8F8;
+  @include mq {
+    margin-top: rem(120);
+    padding-top: rem(120);
+  }
+}
+
+.works__inner {
+  max-width: rem(1140);
+  margin: 0 auto;
+  padding: 0 $inner-padding;
+  width: 100%;
+}
+
+.works__content {
+  background-color: $color-white;
+  margin-top: rem(12);
+  margin-inline: calc(50% - 50vw);
+  padding-block: rem(30) rem(80);
+  padding-inline: rem(40);
+  @include mq {
+    margin-inline: inherit;
+    margin-top: rem(40);
+    padding-block: rem(50);
+  }
+}
+
+.works__items {
+  display: flex;
+  flex-direction: column;
+  gap: rem(30);
+}
+
+.works__item {
+  display: flex;
+  gap: rem(18);
+  padding-bottom: rem(30);
+  border-bottom: rem(1) solid #E2E2E2;
+  cursor: pointer;
+  &:hover .works__text {
+    background-size: 100% 1px;
+  }
+  @include mq {
+    gap: rem(50);
+    padding-bottom: rem(50);
+  }
+}
+
+.works__img {
+  width: 41%;
+  flex-shrink: 0;
+  @include mq {
+    width: rem(290);
+  }
+  img {
+    aspect-ratio: 120 / 90;
+    width: 100%;
+    object-fit: cover;
+    @include mq {
+      aspect-ratio: 290 / 229;
+    }
+  }
+}
+
+.works__body {
+  @include mq {
+    flex: 1;
+  }
+}
+
+.works__category {
+  color: #626262;
+  font-size: rem(10);
+  font-weight: 500;
+  background-color: #F3F3F3;
+  padding: rem(5) rem(15);
+  width: fit-content;
+  @include mq {
+    font-size: rem(11);
+    padding: rem(4) rem(18);
+  }
+}
+
+.works__text {
+  margin-top: rem(6);
+  color: $color-main;
+  font-size: rem(14);
+  font-weight: 500;
+  line-height: 2;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-size: 0 1px;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease;
+  @include mq {
+    font-size: rem(24);
+    margin-top: rem(34);
+  }
+}
+
+.works__description {
+  display: none;
+  @include mq {
+    display: block;
+    margin-top: rem(17);
+    color: #626262;
+    line-height: 2.375;
+  }
+}
+
+.works__date {
+  display: block;
+  margin-top: rem(12);
+  color: #A9A9A9;
+  font-size: rem(10);
+  font-weight: 700;
+}
+
+.works__link {
+  text-align: right;
+  margin-top: rem(40);
+}

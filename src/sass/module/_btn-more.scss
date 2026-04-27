@@ -1,0 +1,61 @@
+@use '../base/variables' as *;
+@use '../base/mixin' as *;
+
+.btn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(10);
+  color: #001E63;
+  font-size: rem(14);
+  padding: rem(15) rem(20);
+  margin: rem(-15) rem(-20);
+  font-weight: 500;
+  font-family: $font-family-sub;
+  position: relative;
+
+  span {
+    position: relative;
+    &::before {
+      content: "";
+      width: 100%;
+      height: rem(2);
+      background-color: #001E63;
+      position: absolute;
+      left: 0;
+      bottom: rem(-3);
+      transform: scale(0);
+      transform-origin: left center;
+      transition: transform 0.3s;
+    }
+  }
+
+  &::after {
+    content: "";
+    width: rem(5);
+    height: rem(9);
+    background-image: url('../images/btn-icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    span {
+      &::before {
+        transform: scaleX(1);
+      }
+    }
+    &::after {
+      transform: translateX(rem(5));
+    }
+  }
+
+  &--outline {
+    margin: 0;
+    color: #011950;
+    border: rem(1) solid #011950;
+    border-radius: rem(4);
+    padding: rem(12) rem(24);
+  }
+}

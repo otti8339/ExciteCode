@@ -1,0 +1,157 @@
+@use '../base/variables' as *;
+@use '../base/mixin' as *;
+
+.news {
+  background-color: #F8F8F8;
+  padding-block: rem(80) rem(72);
+  @include mq {
+    padding-block: rem(120);
+  }
+}
+
+.news__inner {
+  max-width: rem(1140);
+  padding-inline: rem(20);
+  margin-inline: auto;
+  width: 100%;
+  @include mq {
+    position: relative;
+    
+  }
+}
+
+.news__content {
+  @include mq {
+    display: flex;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      left: calc(30.138% + #{rem(-50)});
+      // left: rem(270);
+      top: rem(20);
+      bottom: rem(-70);
+      width: rem(1);
+      background-color: #E2E2E2;
+    }
+  }
+}
+
+.news__head {
+  @include mq {
+    width: 30.138%;
+  }
+}
+
+.news__categories {
+  margin-top: rem(40);
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(15) rem(40);
+  margin-inline: rem(34);
+  @include mq {
+    flex-direction: column;
+  }
+
+}
+
+.news__category {
+  font-size: rem(12);
+  color: #A9A9A9;
+  font-weight: 500;
+  position: relative;
+
+  &--active {
+    position: relative;
+    color: $color-main;
+    &::after {
+      content: "";
+      width: rem(8);
+      height: rem(8);
+      background-color: $color-accent;
+      position: absolute;
+      left: rem(-14);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.news__items {
+  margin-top: rem(40);
+  margin-inline: rem(20);
+  @include mq {
+    flex: 1;
+    margin-top: 0;
+    margin-inline: 0;
+  }
+}
+
+.news__item {
+  padding-block: rem(20);
+  border-bottom: rem(1) solid #E2E2E2;
+
+  &:first-child {
+    border-top: rem(1) solid #E2E2E2;
+    @include mq {
+      border-top: none;
+    }
+  }
+}
+
+.news__link-head {
+  display: flex;
+  align-items: center;
+  gap: rem(12);
+  @include mq {
+    gap: rem(29);
+  }
+}
+
+.news__date {
+  color: #A9A9A9;
+  font-size: rem(10);
+  font-weight: 700;
+  @include mq {
+    font-size: rem(12);
+  }
+}
+
+.news__tags {
+  display: flex;
+  gap: rem(6);
+  @include mq {
+    gap: rem(20);
+  }
+
+}
+
+.news__tag {
+  color: #626262;
+  font-size: rem(10);
+  font-weight: 500;
+  padding: rem(5) rem(15);
+  background-color: $color-white;
+  @include mq {
+    font-size: rem(11);
+    padding: rem(4) rem(18);
+  }
+}
+
+.news__text {
+  margin-top: rem(20);
+  color: $color-main;
+  font-size: rem(14);
+  font-weight: 500;
+  line-height: 2;
+  @include mq {
+    margin-top: rem(26);
+    font-size: inherit;
+  }
+}
+
+.news__btn {
+  text-align: right;
+  margin-top: rem(45);
+}
+

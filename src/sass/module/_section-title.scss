@@ -1,0 +1,12 @@
+@use '../base/variables' as *;
+@use '../base/mixin' as *;
+
+.section-title {
+  font-family: $font-family-en;
+  font-size: rem(38);
+  font-weight: 700;
+  color: $color-main;
+  @include mq {
+    font-size: rem(70);
+  }
+}

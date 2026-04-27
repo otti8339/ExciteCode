@@ -1,0 +1,16 @@
+@use '../base/variables' as *;
+@use '../base/mixin' as *;
+
+.footer-nav__item a {
+  color: $color-white;
+  font-size: rem(14);
+  font-family: $font-family-sub;
+  text-transform: uppercase;
+  display: block;
+  padding-block: rem(12);
+  @include mq {
+    font-size: rem(16);
+    padding-block: rem(10);
+  }
+
+}

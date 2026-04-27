@@ -1,3 +1,63 @@
 @use '../base/variables' as *;
+@use '../base/mixin' as *;
 
+.footer {
+  padding-block: rem(62) rem(30);
+  background-color: $color-bg;
+  @include mq {
+    padding-block: rem(62) rem(64);
+  }
+}
+
+.footer__inner {
+  max-width: rem(1130);
+  padding-inline: rem(50);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.footer__contents {
+  @include mq {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+  }
+}
+
+.footer__content + .footer__content {
+  margin-top: rem(62);
+  @include mq {
+    margin-top: 0;
+  }
+}
+
+.footer__top {
+  @include mq {
+    display: flex;
+    align-items: center;
+    gap: rem(46);
+  }
+}
+
+.footer__logo img {
+  width: rem(258);
+}
+
+.footer__sns {
+  margin-top: rem(50);
+  @include mq {
+    margin-top: 0;
+  }
+}
+
+.footer__copyright {
+  margin-top: rem(50);
+  font-size: rem(12);
+  font-family: $font-family-sub;
+  color: $color-white;
+  @include mq {
+    margin-top: rem(20);
+  }
+}
 

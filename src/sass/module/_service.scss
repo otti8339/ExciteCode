@@ -1,0 +1,90 @@
+@use '../base/variables' as *;
+@use '../base/mixin' as *;
+
+.service {
+  margin-top: rem(80);
+
+  &__inner {
+    max-width: rem(1160);
+    padding: 0 $inner-padding;
+    margin: 0 auto;
+    width: 100%;
+  }
+  @include mq {
+    margin-top: rem(120);
+  }
+}
+
+.service__title {
+  @include mq {
+    text-align: right;
+  }
+}
+
+.service__items {
+  margin-top: rem(20);
+  display: grid;
+  gap: rem(50);
+  @include mq {
+    margin-top: rem(40);
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(18);
+  }
+}
+
+.service__img {
+  position: relative;
+
+  img {
+    aspect-ratio: 335 / 170;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    @include mq {
+      aspect-ratio: 355 / 170;
+  }
+  }
+}
+
+.service__header {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: rem(30);
+}
+
+.service__number {
+  color: $color-white;
+  font-family: $font-family-en;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.service__header-title {
+  color: $color-white;
+  font-size: rem(26);
+  font-weight: 700;
+  margin-top: rem(10);
+}
+
+.service__body {
+  margin-top: rem(20);
+  @include mq {
+    margin-right: rem(26);
+  }
+}
+
+.service__text {
+  color: $color-main;
+  font-size: rem(14);
+  line-height: 2.28571;
+  @include mq {
+    font-size: rem(16);
+    line-height: 2.375;
+  }
+}
+
+.service__link {
+  margin-top: rem(20);
+  text-align: right;
+}

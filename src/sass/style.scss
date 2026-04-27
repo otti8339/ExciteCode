@@ -12,13 +12,25 @@
 @use 'global/header';
 @use 'global/footer';
 
-// Module（パーツ）
+// Module (パーツ)
 @use 'module/button';
 @use 'module/inner';
+@use 'module/sp-nav';
+@use 'module/pc-nav';
+@use 'module/sns';
+@use 'module/footer-nav';
+@use 'module/mv';
+@use 'module/btn-more';
+@use 'module/about';
+@use 'module/section-title';
+@use 'module/service';
+@use 'module/works';
+@use 'module/contact';
+@use 'module/news';
 
-// Page（ページ固有）
+// Page (ページ固有)
 // @use 'page/top';
 // @use 'page/about';
 
-// Plugin（外部ライブラリ上書き等）
+// Plugin (外部ライブラリ上書き等)
 // @use 'plugin/swiper';

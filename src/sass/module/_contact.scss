@@ -1,0 +1,64 @@
+@use '../base/variables' as *;
+@use '../base/mixin' as *;
+
+.contact {
+  position: relative;
+}
+
+.contact__title {
+  position: absolute;
+  width: rem(1);
+  height: rem(1);
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.contact__content {
+  display: grid;
+  text-align: center;
+  @include mq {
+    grid-template-columns: 820fr 620fr;
+  }
+}
+
+.contact__body {
+  background-color: $color-accent;
+  color: $color-white;
+  padding: rem(80) rem(74);
+  font-size: rem(14);
+  line-height: 2;
+  @include mq {
+    order: 1;
+  }
+}
+
+.contact__actions {
+  margin-top: rem(32);
+  margin-inline: auto;
+  display: grid;
+  gap: rem(20);
+  max-width: rem(227);
+  @include mq {
+    margin-top: rem(25);
+    max-width: rem(235);
+  }
+}
+
+.contact__img {
+  picture,
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.contact__hours {
+  font-size: rem(12);
+  margin-top: rem(10);
+  @include mq {
+    margin-top: rem(22);
+  }
+}

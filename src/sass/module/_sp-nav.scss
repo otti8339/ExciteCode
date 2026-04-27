@@ -1,0 +1,55 @@
+@use '../base/variables' as *;
+@use '../base/mixin' as *;
+
+
+.sp-nav {
+  visibility: hidden;
+  opacity: 0;
+  background-color: #001135;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  padding-bottom: rem(30);
+
+  &.is-open {
+    visibility: visible;
+    opacity: 1;
+    transition: all $transition-base;
+  }
+}
+
+.sp-nav__logo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.sp-nav__items {
+  padding-top: rem(160);
+  margin-inline: rem(50);
+}
+
+.sp-nav__item {
+  border-bottom: rem(1) solid #011950;
+  &:first-child {
+    border-top: rem(1) solid #011950;
+  }
+}
+
+.sp-nav__item a {
+  color: $color-white;
+  font-size: rem(14);
+  font-family: $font-family-sub;
+  text-transform: uppercase;
+  display: block;
+  padding-block: rem(12);
+}
+
+.sp-nav__sns {
+  margin: rem(40) 0 0;
+  padding: 0 rem(50);  // 左右の余白
+}

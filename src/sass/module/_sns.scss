@@ -1,0 +1,22 @@
+@use '../base/variables' as *;
+@use '../base/mixin' as *;
+
+.sns {
+  display: flex;
+  gap: rem(24);  // アイコン間の余白
+  list-style: none;
+ 
+}
+
+.sns-item {
+  a {
+    color: $color-white;
+    font-size: rem(24);
+    display: block;
+    transition: opacity $transition-base;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

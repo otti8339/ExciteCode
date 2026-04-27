@@ -10,6 +10,13 @@
   }
 }
 
+// レスポンシブ (MD)
+@mixin mq {
+  @media screen and (min-width: #{$breakpoint-sp}) {
+    @content;
+  }
+}
+
 // レスポンシブ (タブレット)
 @mixin tb {
   @media screen and (min-width: #{$breakpoint-tb}) {
