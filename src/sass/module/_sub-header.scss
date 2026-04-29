@@ -1,0 +1,34 @@
+@use '../base/variables' as *;
+@use '../base/mixin' as *;
+
+.sub-header {
+  &__ja {
+    color: #001E63;
+    font-size: rem(12);
+    font-weight: 700;
+    @include mq {
+      font-size: inherit;
+    }
+  }
+
+  &__en {
+    color: $color-main;
+    font-family: $font-family-en;
+    font-size: rem(26);
+    font-weight: 700;
+    display: flex;
+    gap: rem(10);
+    align-items: center;
+    @include mq {
+      font-size: rem(40);
+      gap: rem(20);
+    }
+
+    span {
+      display: inline-block;
+      height: rem(2);
+      width: rem(60);
+      background-color: $color-main;
+    }
+  }
+}

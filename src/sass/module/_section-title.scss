@@ -6,6 +6,11 @@
   font-size: rem(38);
   font-weight: 700;
   color: $color-main;
+
+  .char {
+    display: inline-block;
+    opacity: 0;
+  }
   @include mq {
     font-size: rem(70);
   }

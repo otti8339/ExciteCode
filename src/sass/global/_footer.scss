@@ -41,7 +41,10 @@
 }
 
 .footer__logo img {
-  width: rem(258);
+  width: rem(114);
+  @include mq {
+    width: rem(258);
+  }
 }
 
 .footer__sns {

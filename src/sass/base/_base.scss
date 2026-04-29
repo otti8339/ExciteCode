@@ -2,10 +2,12 @@
 // ベーススタイル
 // ============================================
 @use 'variables' as *;
+@use 'mixin' as *;
 
 html {
   font-size: $font-size-base;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -14,4 +16,21 @@ body {
   line-height: $line-height-base;
   color: $color-text;
   background-color: $color-white;
+  overflow-x: hidden;
+}
+
+.sp-only {
+  display: block;    // デフォルト表示（SP）
+
+  @include mq {
+    display: none;   // PCで非表示
+  }
+}
+
+.pc-only {
+  display: none;     // デフォルト非表示（SP）
+
+  @include mq {
+    display: block;  // PCで表示
+  }
 }

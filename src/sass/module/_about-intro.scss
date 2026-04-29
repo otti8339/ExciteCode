@@ -1,0 +1,37 @@
+@use '../base/variables' as *;
+@use '../base/mixin' as *;
+
+.about-intro {
+  margin-top: rem(60);
+  @include mq {
+    margin-top: rem(100);
+  }
+
+  &__inner.inner {
+    max-width: rem(880);
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  &__title {
+    color: $color-main;
+    font-size: rem(18);
+    line-height: 2.0555;
+    @include mq {
+      font-size: rem(40);
+      line-height: 1.5;
+    }
+  }
+
+  &__text {
+    margin-top: rem(30);
+    color: $color-main;
+    font-size: rem(14);
+    line-height: 2.2857;
+    @include mq {
+      margin-top: rem(40);
+      font-size: inherit;
+      line-height: 2.375;
+    }
+  }
+}

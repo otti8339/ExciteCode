@@ -1,6 +1,4 @@
-// ============================================
-// 変数定義
-// ============================================
+@use 'sass:math';
 
 // カラー
 $color-main: #000;
@@ -38,5 +36,5 @@ $transition-base: 0.3s ease;
 $base-font-size: 16;
 
 @function rem($px) {
-  @return calc($px / $base-font-size) * 1rem;
+  @return math.div($px, $base-font-size) * 1rem;
 }

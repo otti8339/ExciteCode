@@ -1,0 +1,42 @@
+@use '../base/variables' as *;
+@use '../base/mixin' as *;
+
+.page-nav {
+  margin-top: rem(30);
+  &__lists {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(40);
+    @include mq {
+      gap: rem(120);
+    }
+  }
+
+  &__list {
+    a {
+      display: inline-block;
+      color: $color-accent;
+      font-size: rem(12);
+      position: relative;
+      padding-block: rem(10);
+      margin-block: rem(-10);
+      @include mq {
+        font-size: rem(16);
+      }
+      &::after {
+        content: "";
+        width: rem(9);
+        height: rem(5);
+        background-image: url(../images/page-icon.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: rem(-19);
+      }
+    }
+  }
+}

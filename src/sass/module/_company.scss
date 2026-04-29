@@ -1,0 +1,120 @@
+@use '../base/variables' as *;
+@use '../base/mixin' as *;
+
+.company {
+  margin-top: rem(80);
+  background-color: #F8F8F8;
+  padding-block: rem(60) rem(80);
+  @include mq {
+    margin-top: rem(120);
+    padding-block: rem(70) rem(120);
+  }
+
+  &__inner {
+    max-width: rem(1140);
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: rem(20);
+  }
+
+  &__lists {
+    margin-top: rem(30);
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+    @include mq {
+      margin-top: rem(60);
+      gap: rem(40);
+    }
+  }
+
+  &__list {
+    font-size: rem(14);
+    display: flex;
+    flex-direction: column;
+    gap: rem(16);
+    border-bottom: rem(1) solid #E2E2E2;
+    padding-bottom: rem(20);
+    @include mq {
+      padding-bottom: rem(40);
+      font-size: inherit;
+      flex-direction: row;
+      gap: 0;
+    }
+
+    dt {
+      font-weight: 500;
+      @include mq {
+        width: rem(170);
+        flex-shrink: 0;
+      }
+    }
+
+    dd {
+      @include mq {
+        flex: 1;
+      }
+    }
+  }
+
+  &__multi {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+    @include mq {
+      gap: rem(20);
+    }
+  }
+
+  &__marquee {
+    margin-top: rem(80);
+    overflow: hidden;
+    @include mq {
+      margin-top: rem(120);
+    }
+
+    &-track {
+      display: flex;
+      width: max-content;
+      animation: marquee-scroll 30s linear infinite;
+    }
+
+    &-lists {
+      display: flex;
+      gap: rem(4);
+      padding-right: rem(4);
+      flex-shrink: 0;
+      @include mq {
+        gap: rem(10);
+        padding-right: rem(10);
+      }
+    }
+
+    &-list {
+      flex-shrink: 0;
+      width: rem(180);
+      @include mq {
+        width: rem(480);
+      }
+      img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 180 / 150;
+        object-fit: cover;
+        @include mq {
+          aspect-ratio: 480 / 400;
+        }
+      }
+    }
+
+    @keyframes marquee-scroll {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
+

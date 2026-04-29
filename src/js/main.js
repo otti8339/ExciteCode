@@ -7,16 +7,20 @@ document.addEventListener('DOMContentLoaded', function () {
   // ============================================
   // スムーススクロール
   // ============================================
-  const anchors = document.querySelectorAll('a[href^="#"]');
-  anchors.forEach(function (anchor) {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+
+    // # 単体の場合は何もしない
+    if (href === '#') return;
+
+    e.preventDefault();
+    document.querySelector(href).scrollIntoView({
+      behavior: 'smooth'
     });
   });
+});
 
   // ============================================
   // ハンバーガーメニュー（必要に応じて有効化）
@@ -41,62 +45,100 @@ document.addEventListener('DOMContentLoaded', function () {
     },
   });
 
-
-});
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   // GSAPが読み込まれているかチェック
-//   if (typeof gsap === 'undefined') return;
-  
-//   gsap.set('.mv__title-line, .mv__catch', { visibility: 'visible' });
-//   gsap.registerPlugin(ScrollTrigger);
-
-//   // MV内の要素を時間差で出現させる
-//   gsap.from('.mv__title-line', {
-//     y: 30,           // 30px下から
-//     opacity: 0,      // 透明から
-//     duration: 0.8,   // 0.8秒かけて
-//     delay: 0.3,      // 0.3秒遅らせて開始
-//     stagger: 0.2,    // 各要素を0.2秒ずつずらす
-//     ease: 'power2.out',
-//   });
-  
-//   gsap.from('.mv__catch', {
-//     x: -30,          // 30px左から
-//     opacity: 0,      // 透明から
-//     duration: 0.8,
-//     delay: 0.9,      // タイトルが出終わってから
-//     ease: 'power2.out',
-//   });
-// });
-
-document.addEventListener('DOMContentLoaded', () => {
   if (typeof gsap === 'undefined') return;
 
-  gsap.set('.mv__title-line, .mv__catch', { visibility: 'visible' });
-  // ScrollTriggerプラグインを登録
-  gsap.registerPlugin(ScrollTrigger);
-  
-  // タイトル: ロード時に時間差で出現
-  gsap.from('.mv__title-line', {
-    y: 30,
-    opacity: 0,
-    duration: 0.8,
-    delay: 0.3,
-    stagger: 0.2,
+// 初期状態（PC/SP共通）
+gsap.set('.mv__title-line', { y: 30, opacity: 0, visibility: 'visible' });
+gsap.set('.mv__catch', { x: -30, opacity: 0, visibility: 'visible' });
+
+const mm = gsap.matchMedia();
+
+// PC: ロード時に時間差で発火
+mm.add('(min-width: 768px)', () => {
+  gsap.to('.mv__title-line', {
+    y: 0,
+    opacity: 1,
+    duration: 0.6,
+    delay: 0.2,
+    stagger: 0.15,
     ease: 'power2.out',
   });
-  
-  // キャッチ: スクロールして見えてきたら出現
-  gsap.from('.mv__catch', {
-    x: -30,
-    opacity: 0,
+
+  gsap.to('.mv__catch', {
+    x: 0,
+    opacity: 1,
     duration: 0.8,
+    delay: 0.9,
     ease: 'power2.out',
-    scrollTrigger: {
-      trigger: '.mv__catch-wrap',  // この要素を起点に
-      start: 'top 80%',             // 要素の上端が画面の80%位置に来たら発火
-      // markers: true,             // デバッグ用。動作確認したら消す
-    },
   });
 });
+
+// SP: スクロールで画面に入ったら発火
+mm.add('(max-width: 767px)', () => {
+  gsap.to('.mv__title-line', {
+    y: 0,
+    opacity: 1,
+    duration: 0.6,
+    stagger: 0.15,
+    ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '.mv__title',
+      start: 'top 95%',
+      toggleActions: 'play none none none',
+    }
+  });
+
+  gsap.to('.mv__catch', {
+    x: 0,
+    opacity: 1,
+    duration: 0.6,
+    ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '.mv__catch-wrap',
+      start: 'top 95%',
+      toggleActions: 'play none none none',
+    }
+  });
+});
+
+  const splitTargets = document.querySelectorAll('.js-split-text');
+
+  splitTargets.forEach(target => {
+    const text = target.textContent;
+    target.textContent = '';
+
+    [...text].forEach(char => {
+      const span = document.createElement('span');
+      span.className = 'char';
+      // 半角スペースは&nbsp;扱いに
+      span.textContent = char === ' ' ? '\u00A0' : char;
+      target.appendChild(span);
+    });
+  });
+
+  gsap.registerPlugin(ScrollTrigger);
+
+document.querySelectorAll('.js-split-text').forEach(target => {
+  const chars = target.querySelectorAll('.char');
+
+  gsap.to(chars, {
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    ease: 'power2.out',
+    stagger: 0.1, // 1文字ずつの遅延
+    scrollTrigger: {
+      trigger: target,
+      start: 'top 90%', // 画面下から20%入ったら発火
+      toggleActions: 'play none none none',
+      // markers: true, // デバッグ時に有効化
+    }
+  });
+});
+
+});
+
+
+
+
+

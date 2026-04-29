@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Oswald:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <title>サイトタイトル</title>
+  <!-- head タグ内 -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/style.min.css">
+  <!-- body タグ閉じる前 -->
+  <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- GSAP -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- <script defer>AOS.init();</script> -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out',
+        once: true,
+        offset: 100,
+      });
+    });
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <div class="header__content">
+        <div class="header__logo">
+          <a href="#"><img src="images/logo.svg" alt="サイトロゴ"></a>
+        </div>
+        <button class="header__hamburger js-hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+       </button>
+       <div class="header__sp-nav sp-nav js-sp-nav">
+          <div class="sp-nav__logo">
+            <a href="#"><img src="images/white-logo.svg" alt="サイトロゴ"></a>
+          </div>
+          <ul class="sp-nav__items">
+            <li class="sp-nav__item"><a href="#">top</a></li>
+            <li class="sp-nav__item"><a href="#">about</a></li>
+            <li class="sp-nav__item"><a href="#">service</a></li>
+            <li class="sp-nav__item"><a href="#">works</a></li>
+            <li class="sp-nav__item"><a href="#">news</a></li>
+            <li class="sp-nav__item"><a href="#">contact</a></li>
+            <li class="sp-nav__item"><a href="#">プライバシーポリシー</a></li>
+          </ul>
+          <ul class="sp-nav__sns sns">
+            <li class="sns-item">
+              <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            </li>
+            <li class="sns-item">
+              <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            </li>
+            <li class="sns-item">
+              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+          </ul>
+       </div>
+       <div class="header__pc-nav pc-nav">
+          <ul class="pc-nav__items">
+            <li class="pc-nav__item"><a href="#">top</a></li>
+            <li class="pc-nav__item"><a href="#">about</a></li>
+            <li class="pc-nav__item"><a href="#">service</a></li>
+            <li class="pc-nav__item"><a href="#">works</a></li>
+            <li class="pc-nav__item"><a href="#">news</a></li>
+            <li class="pc-nav__item"><a href="#">contact</a></li>
+          </ul>
+       </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="sub-mv">
+      <div class="sub-mv__inner">
+        <div class="sub-mv__content">
+          <div class="sub-mv__title">
+            <h1 class="sub-mv__en">About</h1>
+            <div class="sub-mv__ja">私たちについて</div>
+          </div>
+          <div class="sub-mv__img">
+            <picture>
+              <source media="(min-width: 768px)" srcset="images/about-pc.png">
+              <img src="images/about-sp.png" alt="aboutのイメージ写真">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+    <div class="breadcrumb__inner">
+      <ol class="breadcrumb__list">
+        <li class="breadcrumb__item"><a href="index.html">Top</a></li>
+        <li class="breadcrumb__item"><img src="images/breadcrumb-icon.png" alt="breaecrumbアイコン"></li>
+        <li class="breadcrumb__item">About</li>
+      </ol>
+    </div>
+    </nav>
+
+    <nav class="page-nav">
+      <ul class="page-nav__lists">
+        <li class="page-nav__list"><a href="#">経営理念</a></li>
+        <li class="page-nav__list"><a href="#">アクセス</a></li>
+        <li class="page-nav__list"><a href="#">会社概要</a> </li>
+      </ul>
+    </nav>
+
+    <section class="about-intro">
+      <div class="about-intro__inner inner">
+        <h2 class="about-intro__title">国境を超え、メーカーを超え<br>
+        「型にはまらない」あなただけの歓びを</h2>
+        <p class="about-intro__text">弊社は、輸入車選びのすべてを見つめ直し、新たなスタイルを提案するインポート・セレクト・ブランドです。これまでの憧れだけや批評家の意見といったイメージで選ぶのではなく、オーナー様となる方がクルマから直接感じるリアルな感性を第一にした、最良の一台との出会いをコーディネートいたします。</p>
+      </div>
+    </section>
+
+    <section class="philosophy">
+      <div class="philosophy__inner inner">
+        <div class="philosophy__content">
+          <div class="philosophy__head">
+            <div class="philosophy__header sub-header">
+              <div class="sub-header__ja">経営理念</div>
+              <h2 class="sub-header__en">Philosophy<span></span></h2>
+            </div>
+            <p class="philosophy__text">「お客様とは一生涯のお付き合い」をモットーとし、同時に社員一人一人が責任と誇り、使命感を持ち日々の仕事にやりがいと喜びを感じることができる会社を目指します。そういう「社員満足」があってこそ、本当の「お客様に満足」が可能になり、そしてお客様のご満足がさらに社員の満足を高めてくれるからです。心の豊かさは楽とかゆとりとかいうより仕事の充実感に求めねばなりません。我々は現状に満足することなく挑戦し続けます。</p>
+            <p class="philosophy__name">代表取締役 田中太郎</p>
+          </div>
+          <div class="philosophy__img">
+            <picture>
+              <source media="(min-width: 768px)" srcset="images/philosophy-pc.png">
+              <img src="images/philosophy-sp.png" alt="代表取締役のイメージ写真">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="access">
+      <div class="access__inner">
+        <div class="access__header sub-header">
+          <div class="sub-header__ja">アクセス</div>
+          <h2 class="sub-header__en">Access<span></span></h2>
+        </div>
+        <div class="access__address-wrap">
+          <div class="access__address">〒000-0000</div>
+          <div class="access__address">〇〇県△△市□□区▲▲町0-0-0</div>
+        </div>
+        <div class="access__map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6483.495951554181!2d139.74285797709666!3d35.658580472594544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bbd9009ec09%3A0x481a93f0d2a409dd!2z5p2x5Lqs44K_44Ov44O8!5e0!3m2!1sja!2sjp!4v1777463164069!5m2!1sja!2sjp" 
+          style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="company">
+      <div class="company__inner">
+        <div class="company__header sub-header">
+          <div class="sub-header__ja">会社概要</div>
+          <h2 class="sub-header__en">Company Profile<span></span></h2>
+        </div>
+        <dl class="company__lists">
+          <div class="company__list">
+            <dt>会社名</dt>
+            <dd>株式会社Excitecode</dd>
+          </div>
+          <div class="company__list">
+            <dt>所在地</dt>
+            <dd><span>〒000-0000</span><span>〇〇県△△市□□区▲▲町0-0-0</span></dd>
+          </div>
+          <div class="company__list">
+            <dt>設立</dt>
+            <dd>2015年12月10日</dd>
+          </div>
+          <div class="company__list">
+            <dt>代表取締役</dt>
+            <dd>田中 太郎</dd>
+          </div>
+          <div class="company__list">
+            <dt>事業内容</dt>
+            <dd class="company__multi">
+              <span>自動車販売（新車、中古車）古物No.第00000000号</span>
+              <span>自動車整備（国産車、輸入車）<br class="sp-only"> 陸運局認証工場 認証No.0-0000</span>
+              <span>輸入車販売（自動車、自動車関連部品）</span>
+              <span>保険代理店<br class="sp-only">（ABC損害保険株式会社、DFG損害保険株式会社）</span>
+            </dd>
+          </div>
+        </dl>
+      </div>
+      <div class="company__marquee">
+        <div class="company__marquee-track">
+          <ul class="company__marquee-lists">
+            <li class="company__marquee-list"><img src="images/cp-img1.png" alt=""></li>
+            <li class="company__marquee-list"><img src="images/cp-img2.png" alt=""></li>
+            <li class="company__marquee-list"><img src="images/cp-img3.png" alt=""></li>
+            <li class="company__marquee-list"><img src="images/cp-img4.png" alt=""></li>
+            <li class="company__marquee-list"><img src="images/cp-img5.png" alt=""></li>
+            <li class="company__marquee-list"><img src="images/cp-img6.png" alt=""></li>
+          </ul>
+          <ul class="company__marquee-lists" aria-hidden="true">
+            <li class="company__marquee-list"><img src="images/cp-img1.png" alt=""></li>
+            <li class="company__marquee-list"><img src="images/cp-img2.png" alt=""></li>
+            <li class="company__marquee-list"><img src="images/cp-img3.png" alt=""></li>
+            <li class="company__marquee-list"><img src="images/cp-img4.png" alt=""></li>
+            <li class="company__marquee-list"><img src="images/cp-img5.png" alt=""></li>
+            <li class="company__marquee-list"><img src="images/cp-img6.png" alt=""></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <h2 class="contact__title sr-only">お問い合わせ</h2>
+      <div class="contact__inner">
+        <div class="contact__content">
+          <div class="contact__body">
+            <p class="contact__lead">輸入車の購入や修理のご相談など<br>お気軽にお問い合わせください。</p>
+            <div class="contact__actions">
+              <a href="#" class="btn btn--outline">
+                 <img src="images/Icon-mail-outline.svg" alt="" class="btn__icon">
+                 <span>お問い合わせ</span>
+              </a>
+              <a href="#" class="btn btn--outline">
+                 <img src="images/icon-phon.svg" alt="" class="btn__icon">
+                 <span>0000-000-000</span>
+              </a>
+            </div>
+            <p class="contact__hours">受付時間 : 火曜日を除く 10：00〜18：00</p>
+          </div>
+          <div class="contact__img">
+            <picture>
+              <source media="(min-width: 768px)" srcset="images/contact-pc.png">
+              <img src="images/contact-sp.png" alt="">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__contents">
+        <div class="footer__content">
+          <div class="footer__nav footer-nav">
+            <ul class="footer-nav__items">
+              <li class="footer-nav__item"><a href="#">top</a></li>
+              <li class="footer-nav__item"><a href="#">about</a></li>
+              <li class="footer-nav__item"><a href="#">service</a></li>
+              <li class="footer-nav__item"><a href="#">works</a></li>
+              <li class="footer-nav__item"><a href="#">news</a></li>
+              <li class="footer-nav__item"><a href="#">contact</a></li>
+              <li class="footer-nav__item"><a href="#">プライバシーポリシー</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__content">
+          <div class="footer__top">
+            <div class="footer__logo">
+              <a href="#"><img src="images/white-logo.svg" alt="フッターロゴ"></a>
+            </div>
+            <ul class="footer__sns sns">
+              <li class="sns-item">
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+              </li>
+              <li class="sns-item">
+                <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+              </li>
+              <li class="sns-item">
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              </li>
+           </ul>
+          </div>
+          <div class="footer__copyright">
+            &copy; 2026 ExciteCode Automobile
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

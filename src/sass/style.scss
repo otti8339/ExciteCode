@@ -27,10 +27,22 @@
 @use 'module/works';
 @use 'module/contact';
 @use 'module/news';
+@use 'module/sub-mv';
+@use 'module/breadcrumb';
+@use 'module/page-nav';
+@use 'module/about-intro';
+@use 'module/philosophy';
+@use 'module/sub-header';
+@use 'module/access';
+@use 'module/company';
 
 // Page (ページ固有)
 // @use 'page/top';
 // @use 'page/about';
+// 下層ページ
+// @use 'page/page-mv';
+// @use 'page/page-nav';
+// @use 'page/about' as page-about;
 
 // Plugin (外部ライブラリ上書き等)
 // @use 'plugin/swiper';
