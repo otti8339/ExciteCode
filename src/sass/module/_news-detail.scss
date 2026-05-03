@@ -1,0 +1,149 @@
+@use '../base/variables' as *;
+@use '../base/mixin' as *;
+
+.news-detail {
+  margin-top: rem(30);
+  @include mq {
+    margin-top: rem(60);
+  }
+}
+
+.news-detail__body {
+  display: grid;
+  gap: rem(57);
+  @include mq {
+    grid-template-columns: 1fr rem(300);
+    gap: clamp(rem(50), 9vw, rem(138));
+  }
+}
+
+.news-detail__inner {
+  max-width: rem(1200);
+  padding-inline: rem(30);
+  margin-inline: auto;
+  width: 100%;
+}
+
+.news-detail__title {
+  margin-top: rem(10);
+  color: $color-main;
+  font-size: rem(18);
+  font-weight: 500;
+  line-height: 1.6666;
+}
+
+.news-detail__date {
+  margin-top: rem(10);
+  color: #A9A9A9;
+  font-weight: 700;
+  font-size: rem(10);
+}
+
+.news-detail__eyecatch {
+  margin-top: rem(40);
+
+  img {
+    aspect-ratio: 315 / 176;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.news-detail__content {
+  margin-top: rem(40);
+  h2 {
+    font-size: inherit;
+    color: $color-main;
+    background-color: #F8F9F9;
+    padding: rem(8) rem(8) rem(9) rem(11);
+    position: relative;
+    &::after {
+      content: "";
+      width: rem(3);
+      height: 100%;
+      background-color: #001E63;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+  p {
+    font-size: rem(14);
+    line-height: 2.2857;
+    margin-top: rem(40);
+  }
+
+  h3 {
+    color: $color-main;
+    font-size: inherit;
+    margin-top: rem(40);
+    padding: rem(8) rem(8) rem(9) rem(13);
+    position: relative;
+    &::before {
+      content: "";
+      width: rem(125);
+      height: rem(1);
+      background-color: #001E63;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+    &::after {
+      content: "";
+      width: rem(190);
+      height: rem(1);
+      background-color: #E4E4E4;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  ul {
+    list-style: disc;
+    padding-left: rem(20);
+  }
+}
+
+.news-detail__nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: rem(48);
+}
+
+.news-detail__prev,
+.news-detail__next {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(8);
+  padding: rem(12) rem(20);
+  border: 1px solid #001E63;
+  border-radius: rem(4);
+  font-size: rem(14);
+  color: #001E63;
+  transition: opacity $transition-base;
+
+  .arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    opacity: 0.7;
+
+    .arrow {
+      transform: translateX(-5px); // 前の記事は左に
+    }
+  }
+}
+
+.news-detail__next {
+  .arrow {
+    transform: translateX(0);
+  }
+
+  &:hover .arrow {
+    transform: translateX(5px); // 次の記事は右に
+  }
+}

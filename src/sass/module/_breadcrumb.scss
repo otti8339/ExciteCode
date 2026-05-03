@@ -26,16 +26,24 @@
 
 .breadcrumb__item {
   font-family: $font-family-sub;
-  &:first-child {
-    color: #A9A9A9;
+  font-size: rem(15);
+
+  a {
+    font-size: rem(15);
   }
 
-  &:nth-child(2) {
+  img {
     width: rem(20);
     display: flex;
   }
 
+  &:not(:last-child) {
+    color: #A9A9A9;
+  }
+
   &:last-child {
     color: #242424;
+    max-width: 10em;
+    @include text-ellipsis;
   }
 }

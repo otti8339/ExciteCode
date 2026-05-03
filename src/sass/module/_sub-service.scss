@@ -1,0 +1,152 @@
+@use '../base/variables' as *;
+@use '../base/mixin' as *;
+
+.sub-service {
+  margin-top: rem(50);
+  @include mq {
+    margin-top: rem(120);
+  }
+
+  &__items {
+    display: grid;
+    gap: rem(50);
+    @include mq {
+      gap: rem(120);
+    }
+  }
+
+  &__item {
+    max-width: rem(1200);
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  &__head {
+    padding-top: rem(60);
+    background-color: $color-rightgray;
+    margin-inline: calc(50% - 50vw);
+    padding-inline: calc(50vw - 50%);
+    width: 100vw;
+    @include mq {
+      display: grid;
+      grid-template-columns: 560fr 640fr;
+      align-items: center;
+      padding-top: 0;
+      width: 100%;
+      margin-inline: inherit;
+      padding-inline: inherit;
+    }
+  }
+
+  &__content {
+    @include mq {
+      padding: rem(20) rem(50);
+    }
+  }
+
+  &__number {
+    color: $color-navy;
+    font-family: $font-family-en;
+    font-size: rem(32);
+    font-weight: 700;
+    display: inline-block;
+    position: relative;
+    &::after {
+      content: "";
+      width: rem(1);
+      height: rem(30);
+      background-color: $color-main;
+      position: absolute;
+      right: rem(-10);
+      top: 50%;
+      transform: translateY(-50%);
+      @include mq {
+        height: rem(34);
+        right: rem(-16);
+      }
+    }
+    @include mq {
+      font-size: rem(40);
+    }
+  }
+
+  &__title {
+    margin-top: rem(20);
+    font-size: rem(20);
+    font-weight: 700;
+    @include mq {
+      font-size: rem(28);
+    }
+  }
+
+  &__text {
+    margin-top: rem(20);
+    font-size: rem(14);
+    font-weight: 500;
+    line-height: 2.285;
+    @include mq {
+      font-size: rem(22);
+      max-width: rem(400);
+      width: 100%;
+    }
+  }
+
+  &__img {
+    margin-top: rem(20);
+    img {
+      aspect-ratio: 335 / 220;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @include mq {
+        aspect-ratio: 640 / 450;
+      }
+    }
+    @include mq {
+      margin-top: 0;
+    }
+  }
+
+  &__body {
+    margin-top: rem(20);
+    @include mq {
+      margin-top: rem(30);
+      max-width: rem(1100);
+      width: 100%;
+      margin-inline: auto;
+    }
+  }
+
+  &__body-title {
+    text-transform: uppercase;
+    font-family: $font-family-en;
+    font-size: rem(18);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: rem(9);
+    span {
+      color: $color-text-light;
+      font-size: rem(10);
+      font-weight: 500;
+      @include mq {
+        font-size: rem(12);
+      }
+    }
+    @include mq {
+      font-size: rem(22);
+      gap: rem(16);
+    }
+  }
+
+  &__body-text {
+    margin-top: rem(20);
+    font-size: rem(14);
+    line-height: 2.285;
+    @include mq {
+      font-size: inherit;
+      line-height: 2.375;
+    }
+  }
+
+}

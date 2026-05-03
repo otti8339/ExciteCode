@@ -1,0 +1,9 @@
+@use '../base/variables' as *;
+@use '../base/mixin' as *;
+
+.lay-breadcrumb {
+  margin-top: rem(90);
+  @include mq {
+    margin-top: rem(200);
+  }
+}

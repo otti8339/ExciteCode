@@ -20,6 +20,14 @@ document.addEventListener('DOMContentLoaded', function () {
       behavior: 'smooth'
     });
   });
+
+  // AOSの初期化
+  AOS.init({
+    duration: 800,
+    easing: 'ease-out',
+    once: true,
+    offset: 0,
+  });
 });
 
   // ============================================
@@ -117,6 +125,41 @@ mm.add('(max-width: 767px)', () => {
   });
 
   gsap.registerPlugin(ScrollTrigger);
+
+  // ============================================
+  // News一覧ページ：記事リストのフェードイン
+  // ============================================
+ const newsItems = document.querySelectorAll('.news__item');
+  if (newsItems.length > 0) {
+    newsItems.forEach((item, index) => {
+      const rect = item.getBoundingClientRect();
+      const inView = rect.top < window.innerHeight;
+
+      if (inView) {
+        // 画面内：ページロード時に順番にfade-up
+        gsap.from(item, {
+          opacity: 0,
+          y: 30,
+          duration: 0.8,
+          delay: index * 0.2,
+          ease: 'power2.out',
+        });
+      } else {
+        // 画面外：スクロールで発火
+        gsap.from(item, {
+          opacity: 0,
+          y: 30,
+          duration: 0.6,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: item,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+          }
+        });
+      }
+    });
+  }
 
 document.querySelectorAll('.js-split-text').forEach(target => {
   const chars = target.querySelectorAll('.char');

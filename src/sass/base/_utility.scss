@@ -1,0 +1,28 @@
+
+@use 'variables' as *;
+@use 'mixin' as *;
+
+.mt-80 {
+  margin-top: rem(80);
+  @include mq {
+    margin-top: rem(120);
+  }
+}
+
+
+
+.sp-only {
+  display: block;    // デフォルト表示（SP）
+
+  @include mq {
+    display: none;   // PCで非表示
+  }
+}
+
+.pc-only {
+  display: none;     // デフォルト非表示（SP）
+
+  @include mq {
+    display: block;  // PCで表示
+  }
+}

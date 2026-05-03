@@ -7,6 +7,7 @@
 @use 'base/variables';
 @use 'base/mixin';
 @use 'base/base';
+@use 'base/utility';
 
 // Global
 @use 'global/header';
@@ -35,9 +36,13 @@
 @use 'module/sub-header';
 @use 'module/access';
 @use 'module/company';
+@use 'module/sub-service';
+@use 'module/pagination';
+@use 'module/news-detail';
+@use 'module/sidebar';
 
 // Page (ページ固有)
-// @use 'page/top';
+@use 'page/lay-breadcrumb';
 // @use 'page/about';
 // 下層ページ
 // @use 'page/page-mv';

@@ -7,7 +7,7 @@
 html {
   font-size: $font-size-base;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  // overflow-x: hidden;
 }
 
 body {
@@ -16,7 +16,13 @@ body {
   line-height: $line-height-base;
   color: $color-text;
   background-color: $color-white;
-  overflow-x: hidden;
+  // overflow-x: hidden;
+}
+
+.l-wrapper {
+  // overflow-x: hidden;
+  // clip-path: inset(0);
+  overflow-x: clip;
 }
 
 .sp-only {

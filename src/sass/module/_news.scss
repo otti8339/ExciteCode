@@ -16,7 +16,6 @@
   width: 100%;
   @include mq {
     position: relative;
-    
   }
 }
 
@@ -24,6 +23,7 @@
   @include mq {
     display: flex;
     position: relative;
+    align-items: flex-start;
     &::before {
       content: "";
       position: absolute;
@@ -40,6 +40,9 @@
 .news__head {
   @include mq {
     width: 30.138%;
+    position: sticky;
+    top: rem(180);
+    align-self: flex-start;
   }
 }
 
@@ -138,15 +141,40 @@
   }
 }
 
+.news__tag--sub {
+  background-color: $color-rightgray;
+}
+
 .news__text {
-  margin-top: rem(20);
+  padding-top: rem(20);
   color: $color-main;
   font-size: rem(14);
   font-weight: 500;
   line-height: 2;
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: rem(1);
+    background-color: $color-main;
+    transition:  width 0.3s ease;
+  }
   @include mq {
-    margin-top: rem(26);
+    padding-top: rem(26);
     font-size: inherit;
+  }
+}
+
+.news__link {
+  &:hover {
+    .news__text::after {
+      width: 100%;
+    }
   }
 }
 

@@ -1,0 +1,43 @@
+@use '../base/variables' as *;
+@use '../base/mixin' as *;
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: rem(10);
+  margin-top: rem(60);
+  
+  &__num
+  &__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(40);
+    height: rem(40);
+    text-decoration: none;
+    color: $color-text;
+    font-size: rem(14);
+    transition: opacity $transition-base;
+    
+    
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  
+  &__num {
+    background-color: #F8F8F8;
+    
+    &--current {
+      background-color: $color-accent;
+      color: $color-white;
+    }
+  }
+
+  &__arrow {
+    font-size: rem(20);
+    background-color: transparent;
+  }
+}
+
